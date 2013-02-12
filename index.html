@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="inlineedit.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('#demo').inlineEdit(
+			options = {
+				newbtn:'btnNew',
+				refreshbtn:'btnRefresh',
+				listUrl:'index.php?action=index',
+				saveUrl:'index.php?action=save',
+				deleteUrl:'index.php?action=delete',
+				saveSuccessIndicator:'SUCCESS',
+				buttonSave:'icons/disk-black.png',
+				buttonEdit:'icons/pencil-ruler.png',
+				buttonCross:'icons/cross-button.png',
+				tds: [{
+					tag:'input',
+					name:'id',
+					id:'id',
+					type:'text',
+					style:'',
+					readonly:'readonly'
+				},{
+					tag:'input',
+					name:'text',
+					id:'text',
+					type:'text',
+					style:'',
+					placeholder:'Text Field'
+				},{
+					tag:'input',
+					name:'number',
+					id:'number',
+					type:'number',
+					style:'',
+					placeholder:'Number'
+				},{
+					tag:'input',
+					name:'file',
+					id:'file',
+					type:'file',
+					style:'',
+					preview:true,
+				},{
+					tag:'select',
+					name:'select_id',
+					id:'select_id',
+					preview:true,
+					descfield:'select.name',
+					options:'<select id="select_id" name="select_id"><option value="1">first</option><option value="2">second</option><option value="3">third</option></select>'
+				}]
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h2>InlineEdit Sample (Alpha Version) by G-man</h2>
+		<hr>
+		<table id="demo" width="800" border="1" align="center">
+		<thead>
+			<td>Id</td>
+			<td>Text/Password</td>
+			<td>Numeric</td>
+			<td>File</td>
+			<td>Select</td>
+			<td>action</td>
+		</thead>
+		<tbody>
+		</tbody>
+		<tfoot>
+		</tfoot>
+		</table>
+		
+		<button id="btnNew">New</button>
+		<button id="btnRefresh">Refresh</button>
+	</body>
+</html>
